@@ -20,13 +20,13 @@ export default function About() {
                   </h2>
               </div>
               <p className="text-gray-300 text-center lg:text-left">
-              I'm an engineer with a passion for building data-driven solutions and full-stack applications.
+              Hi there! I'm a software engineer with a passion for building data-driven solutions and software applications. My past experience includes software development, data analytics, and project management. 
               </p>
               <p className="text-gray-300 text-center lg:text-left">
-              With experience in technologies like Python, JavaScript, Flask, Node.js, React, AWS, Tableau, and Excel, I love tackling complex challenges and optimizing workflows.
+              Most recently, I graduated with a computer science master's degree from the University of Pennsylvania. While completing my degree, I was a software engineering intern at Hrhouz working on an AI-driven analytics service to support employers in the recruiting process and a graduate teaching assistant helping students with software development in Python and Java!
               </p>
               <p className="text-gray-300 text-center lg:text-left">
-              Outside of coding, I enjoy badminton, volleyball, and training for a triathlon!
+              Outside of work, I enjoy badminton, volleyball, and training for a triathlon!
               </p>
           </div>
       </section>
