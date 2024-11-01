@@ -28,8 +28,8 @@ export default function About() {
               <p className="text-gray-300 text-center lg:text-left">
               Outside of work, I enjoy badminton, volleyball, board games, and karaoke!
               </p>
-              <p>
-                Feel free to take a look at my resume.
+              <p className="text-gray-300 text-center lg:text-left">
+                Feel free to take a look at my resume
                 <a className="text-bold text-teal-400" href="https://docs.google.com/document/d/1ZYn0cqV3BXf3Spuj55sDAcgPJ3KdfLYThks8Xl4rrNo/edit?usp=sharing"> here</a>
               </p>
           </div>
