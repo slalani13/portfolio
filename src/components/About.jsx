@@ -16,7 +16,7 @@ export default function About() {
           <div className="flex-1 flex flex-col justify-center items-center gap-5 px-6">
               <div>
                   <h2 className="text-center text-teal-400 text-5xl font-bold">
-                      About Me :
+                      About Me
                   </h2>
               </div>
               <p className="text-gray-300 text-center lg:text-left">

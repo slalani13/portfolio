@@ -23,7 +23,7 @@ const Navbar = () => {
                                     transition rounded text-gray-100 
                                     hover:text-gray-900 hover:bg-teal-400"
                           href="#skills">
-                          Skills
+                          Tech Stack
                       </a>
                   </li>
                   <li>

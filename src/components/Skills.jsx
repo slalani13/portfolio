@@ -7,7 +7,7 @@ export default function Skills() {
   return (
       <section id="skills" className="px-10 py-10 w-full max-w-5xl mx-auto bg-gray-900 text-gray-100 mb-5 mt-0">
           <h2 className="text-center text-5xl text-teal-400 font-bold">
-              My Skills...
+              Tech Stack
           </h2>
           <div className="mt-10 flex gap-4 justify-center flex-wrap mx-auto max-w-xl">
               {skills.map((skill, index) => {
