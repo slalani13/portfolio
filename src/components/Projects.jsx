@@ -6,14 +6,14 @@ import hrhouz from "../assets/hrhouz.png"
 export default function Projects() {
   return (
       <section id="projects"
-               className="w-full flex flex-col gap-5 align-center max-w-5xl mx-auto mb-10">
+               className="w-full flex flex-col gap-5 align-center max-w-5xl mx-auto mb-10 overflow-x-hidden">
           <h2 className="text-5xl text-teal-400 font-bold text-center">
               Projects
           </h2>
 
-          <div className="p-10 bg-gray-800 flex justify-around items-start
+          <div className="p-10 bg-gray-800 flex flex-col justify-around items-start
                           gap-5 lg:flex-row max-w-5xl mx-auto shadow transition 
-                          hover:shadow-xl hover:scale-[102%] w-full">
+                          hover:shadow-xl hover:scale-[102%] w-full md:items-center">
               <div className="w-80 rounded flex justify-center">
                   <a target="_blank" href="https://github.com/Stephman1/liveability-app"
                       className="w-full h-full">
@@ -39,9 +39,9 @@ export default function Projects() {
               </div>
           </div>
 
-          <div className="p-10 bg-gray-800 flex justify-around items-start
+          <div className="p-10 bg-gray-800 flex flex-col justify-around items-start
                           gap-5 lg:flex-row max-w-5xl mx-auto shadow transition 
-                          hover:shadow-xl hover:scale-[102%] w-full">
+                          hover:shadow-xl hover:scale-[102%] w-full md:items-center">
               <div className="w-80 rounded flex justify-center">
                   <a target="_blank" href="https://github.com/Stephman1/liveability-app"
                       className="w-full h-full">
@@ -70,7 +70,7 @@ export default function Projects() {
 
           <div className="p-10 bg-gray-800 flex flex-col justify-around items-start
                           gap-5 lg:flex-row max-w-5xl mx-auto shadow transition 
-                          hover:shadow-xl hover:scale-[102%] w-full">
+                          hover:shadow-xl hover:scale-[102%] w-full md:items-center">
               <div className="w-80 rounded">
                   <a target="_blank" href="https://github.com/slalani13/Yelp-Ratings-Prediction-Project"
                       className="w-full h-full">
