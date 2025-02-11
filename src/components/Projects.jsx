@@ -7,25 +7,32 @@ import hrhouz from "../assets/hrhouz.png"
 export default function Projects() {
   const [repoLinkLivability, setRepoLinkLivability] = useState("");
   const [repoLinkYelp, setRepoLinkYelp] = useState("");
+  const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 
   useEffect(() => {
-    // Fetch the repository data for 'liveability-app'
-    fetch("https://api.github.com/repos/Stephman1/liveability-app")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Livability repo data:", data);
-        setRepoLinkLivability(data.html_url); // Extract the repo URL for Livability App
-      })
-      .catch((error) => console.error("Error fetching repo data for Livability App:", error));
+    const fetchRepoData = async (repo, setter) => {
+      try {
+        const response = await fetch(`https://api.github.com/repos/${repo}`, {
+          headers: {
+            Authorization: `token ${GITHUB_TOKEN}`,
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        });
 
-    // Fetch the repository data for 'Yelp-Ratings-Prediction-Project'
-    fetch("https://api.github.com/repos/slalani13/Yelp-Ratings-Prediction-Project")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Yelp repo data:", data);
-        setRepoLinkYelp(data.html_url); // Extract the repo URL for Yelp Project
-      })
-      .catch((error) => console.error("Error fetching repo data for Yelp Project:", error));
+        if (!response.ok) {
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log(`${repo} data:`, data);
+        setter(data.html_url);
+      } catch (error) {
+        console.error(`Error fetching ${repo}:`, error);
+      }
+    };
+
+    fetchRepoData("Stephman1/liveability-app", setRepoLinkLivability);
+    fetchRepoData("slalani13/Yelp-Ratings-Prediction-Project", setRepoLinkYelp);
   }, []);
 
   return (

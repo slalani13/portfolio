@@ -1,7 +1,7 @@
 export default function Skills() {
   const skills = [
     "Python", "HTML", "CSS", "JavaScript", "React",
-    "C/C++", "Java", "SQL", "NoSQL", "Terraform", "Docker"
+    "C/C++", "Java", "SQL", "NoSQL", "Terraform", "Docker", "Spring Boot"
   ];
   
   return (
