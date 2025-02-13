@@ -74,7 +74,9 @@ export default function Projects() {
                           gap-5 lg:flex-row max-w-5xl mx-auto shadow transition 
                           hover:shadow-xl hover:scale-[102%] w-full md:items-center">
               <div className="w-80 rounded flex justify-center">
-                  <a target="_blank" href={repoLinkLivability || "#"}
+                  <a target="_blank" 
+                    //   href={repoLinkLivability || "#"}
+                      href="https://github.com/Stephman1/liveability-app"
                       className="w-full h-full">
                       <img src={ideal}
                            alt="Project 1"
@@ -85,7 +87,8 @@ export default function Projects() {
               <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1 text-gray-100">
                   <h2 className="font-bold text-3xl text-center">
                       <a className="hover:underline text-teal-400 " target="_blank"
-                          href={repoLinkLivability || "#"}>
+                          // href={repoLinkLivability || "#"}
+                          href="https://github.com/Stephman1/liveability-app">
                           Neigborhood Livability Application
                       </a>
                   </h2>
@@ -103,7 +106,9 @@ export default function Projects() {
                           gap-5 lg:flex-row max-w-5xl mx-auto shadow transition 
                           hover:shadow-xl hover:scale-[102%] w-full md:items-center">
               <div className="w-80 rounded">
-                  <a target="_blank" href={repoLinkYelp || "#"}
+                  <a target="_blank" 
+                      // href={repoLinkYelp || "#"}
+                      href="https://github.com/slalani13/Yelp-Ratings-Prediction-Project"
                       className="w-full h-full">
                       <img src={picture1}
                            alt="Project 1"
@@ -114,7 +119,8 @@ export default function Projects() {
               <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1 text-gray-100">
                   <h2 className="font-bold text-3xl text-center">
                       <a target="_blank" className="hover:underline text-teal-400"
-                          href={repoLinkYelp || "#"}>
+                        //   href={repoLinkYelp || "#"}
+                          href="https://github.com/slalani13/Yelp-Ratings-Prediction-Project">
                           Yelp Star Ratings Prediction
                       </a>
                   </h2>

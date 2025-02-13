@@ -43,7 +43,7 @@ export default function About() {
                      align-center bg-gray-900 max-w-5xl mx-auto text-gray-100 mt-10">
           <div className="flex-1 flex justify-center items-center">
               <img 
-                  src={profilePhoto}  // {headshot}
+                  src={headshot}  // {headshot}
                   alt="About"
                   className="w-80 h-80 object-cover rounded-full border border-teal-400"
               />
