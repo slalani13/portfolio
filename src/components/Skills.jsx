@@ -1,28 +1,61 @@
 export default function Skills() {
-  const skills = [
-    "Python", "HTML", "CSS", "JavaScript", "React",
-    "C/C++", "Java", "SQL", "NoSQL", "Terraform", "Docker", "Spring Boot"
-  ];
+    const frontendSkills = [
+      "Angular", "Typescript", "TailwindCSS", "React", "JavaScript", "HTML", "CSS", "FramerMotion"
+    ];
   
-  return (
-      <section id="skills" className="px-10 py-10 w-full max-w-5xl mx-auto bg-gray-900 text-gray-100 mb-5 mt-0">
-          <h2 className="text-center text-5xl text-teal-400 font-bold">
-              Tech Stack
-          </h2>
-          <div className="mt-10 flex gap-4 justify-center flex-wrap mx-auto max-w-xl">
-              {skills.map((skill, index) => {
-                  return (
-                      <div key={index}
-                           className="cursor-pointer w-28 h-20 // Adjusted width for 6 blocks 
-                                      rounded bg-gray-800 text-lg 
-                                      flex items-center justify-center 
-                                      font-bold text-teal-400 hover:shadow-xl 
-                                      transition-all duration-300 hover:bg-teal-600">
-                          {skill}
-                      </div>
-                  );
-              })}
+    const backendSkills = [
+      "Java", "Spring Boot", "Python", "Flask", "C", "C++", "SQL", "NoSQL"
+    ];
+  
+    const toolsSkills = [
+      "Git", "MySQL", "PostgreSQL", "MongoDB", "Figma", "Terraform", "Docker", "AWS"
+    ];
+  
+    return (
+      <section id="techstack" className="px-10 py-0 w-full max-w-5xl mx-auto bg-black text-gray-100 mb-5 mt-10">
+        <h2 className="text-center text-5xl text-red-500 font-bold mb-8">Tech Stack</h2>
+  
+        {/* Tech Stack Categories */}
+        <div className="flex flex-col gap-12">
+          
+          {/* Frontend Skills */}
+          <div>
+            <h3 className="text-3xl text-red-500 font-semibold mb-4">Frontend</h3>
+            <div className="flex gap-8 flex-wrap justify-start">
+              {frontendSkills.map((skill, index) => (
+                <div key={index} className="text-lg font-bold text-gray-300 hover:text-red-500 transition-all">
+                  {skill}
+                </div>
+              ))}
+            </div>
           </div>
+  
+          {/* Backend Skills */}
+          <div>
+            <h3 className="text-3xl text-red-500 font-semibold mb-4">Backend</h3>
+            <div className="flex gap-8 flex-wrap justify-start">
+              {backendSkills.map((skill, index) => (
+                <div key={index} className="text-lg font-bold text-gray-300 hover:text-red-500 transition-all">
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+  
+          {/* Tools */}
+          <div>
+            <h3 className="text-3xl text-red-500 font-semibold mb-4">Tools</h3>
+            <div className="flex gap-8 flex-wrap justify-start">
+              {toolsSkills.map((skill, index) => (
+                <div key={index} className="text-lg font-bold text-gray-300 hover:text-red-500 transition-all">
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+  
+        </div>
       </section>
-  );
-}
+    );
+  }
+  

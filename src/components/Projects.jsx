@@ -3,136 +3,64 @@ import ideal from "../assets/ideal neighborhood.jpg"
 import picture1 from "../assets/Picture1.jpg"
 import hrhouz from "../assets/hrhouz.png"
 
-// Projects.js
 export default function Projects() {
-  const [repoLinkLivability, setRepoLinkLivability] = useState("");
-  const [repoLinkYelp, setRepoLinkYelp] = useState("");
-  const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
-
-  useEffect(() => {
-    const fetchRepoData = async (repo, setter) => {
-      try {
-        const response = await fetch(`https://api.github.com/repos/${repo}`, {
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            "X-GitHub-Api-Version": "2022-11-28",
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error(`Error ${response.status}: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        console.log(`${repo} data:`, data);
-        setter(data.html_url);
-      } catch (error) {
-        console.error(`Error fetching ${repo}:`, error);
-      }
-    };
-
-    fetchRepoData("Stephman1/liveability-app", setRepoLinkLivability);
-    fetchRepoData("slalani13/Yelp-Ratings-Prediction-Project", setRepoLinkYelp);
-  }, []);
-
   return (
-      <section id="projects"
-               className="w-full flex flex-col gap-5 align-center max-w-5xl mx-auto mb-10 overflow-x-hidden">
-          <h2 className="text-5xl text-teal-400 font-bold text-center">
-              Projects
-          </h2>
+    <section id="projects" className="w-full flex flex-col gap-5 max-w-5xl mx-auto mb-10 mt-10">
+      <h2 className="text-center text-5xl text-red-500 font-bold mb-8">
+        Projects
+      </h2>
 
-          <div className="p-10 bg-gray-800 flex flex-col justify-around items-start
-                          gap-5 lg:flex-row max-w-5xl mx-auto shadow transition 
-                          hover:shadow-xl hover:scale-[102%] w-full md:items-center">
-              <div className="w-80 rounded flex justify-center">
-                  <a target="_blank" href="https://www.hrhouz.com/reference-checks"
-                      className="w-full h-full">
-                      <img src={hrhouz}
-                           alt="Project 1"
-                           className="w-full h-64 
-                                      bg-cover rounded"/>
-                  </a>
-              </div>
-              <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1 text-gray-100">
-                  <h2 className="font-bold text-3xl text-center">
-                      <a className="hover:underline text-teal-400 " target="_blank"
-                          href="https://www.hrhouz.com/reference-checks">
-                          AI-driven Reference Check Analytics
-                      </a>
-                  </h2>
-                  <p>
-                  At Hrhouz, I developed an AI-driven automated reference-checking software to analyze candidate data and deliver actionable insights and summaries for better hiring decisions. I automated deployment infrastructure and built an analytics API to convert text data into measurable performance metrics, enabling comprehensive candidate evaluations.
-                  </p>
-                  <p>
-                  Technologies: Python, Flask, Terraform, Docker, AWS 
-                  </p>
-              </div>
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            title: "AI-driven Reference Check Analytics",
+            imgSrc: hrhouz,
+            link: "https://www.hrhouz.com/reference-checks",
+            description:
+              "Developed AI-driven automated reference-checking software to analyze candidate data and provide hiring insights.",
+            tech: "Python, Flask, Terraform, Docker, AWS",
+          },
+          {
+            title: "Neighborhood Livability Application",
+            imgSrc: ideal,
+            link: "https://github.com/Stephman1/liveability-app",
+            description:
+              "An app that evaluates neighborhoods based on air quality, life expectancy, and walkability metrics.",
+            tech: "React, JavaScript, Node.js, MySQL, AWS RDS",
+          },
+          {
+            title: "Yelp Star Ratings Prediction",
+            imgSrc: picture1,
+            link: "https://github.com/slalani13/Yelp-Ratings-Prediction-Project",
+            description:
+              "Used data-driven insights to analyze customer behavior, predict ratings, and improve business strategies.",
+            tech: "Python, Pandas, scikit-learn, Seaborn, Tableau",
+          },
+        ].map((project, index) => (
+          <div
+            key={index}
+            className="p-5 bg-black rounded-lg shadow-lg transition hover:shadow-2xl hover:scale-[102%] border border-gray-700"
+          >
+            <a target="_blank" href={project.link} className="block">
+              <img
+                src={project.imgSrc}
+                alt={project.title}
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </a>
+            <h3 className="text-xl font-bold text-white mt-3 text-center">
+              <a target="_blank" href={project.link} className="hover:underline text-gray-300">
+                {project.title}
+              </a>
+            </h3>
+            <p className="text-gray-400 text-sm mt-2">{project.description}</p>
+            <p className="text-gray-500 text-xs mt-2">
+              <strong>Technologies:</strong> {project.tech}
+            </p>
           </div>
-
-          <div className="p-10 bg-gray-800 flex flex-col justify-around items-start
-                          gap-5 lg:flex-row max-w-5xl mx-auto shadow transition 
-                          hover:shadow-xl hover:scale-[102%] w-full md:items-center">
-              <div className="w-80 rounded flex justify-center">
-                  <a target="_blank" 
-                    //   href={repoLinkLivability || "#"}
-                      href="https://github.com/Stephman1/liveability-app"
-                      className="w-full h-full">
-                      <img src={ideal}
-                           alt="Project 1"
-                           className="w-full h-64 
-                                      bg-cover rounded"/>
-                  </a>
-              </div>
-              <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1 text-gray-100">
-                  <h2 className="font-bold text-3xl text-center">
-                      <a className="hover:underline text-teal-400 " target="_blank"
-                          // href={repoLinkLivability || "#"}
-                          href="https://github.com/Stephman1/liveability-app">
-                          Neigborhood Livability Application
-                      </a>
-                  </h2>
-                  <p>
-                  The Livability App consolidates essential neighborhood data to support informed relocation decisions based on more than just housing costs. By comparing metrics like air quality, life expectancy, walkability, and rent across regions, our app provides a central resource for users to evaluate neighborhoods holistically. With a comprehensive analysis of livability factors, we help users find areas that best match their lifestyle and preferences.
-                  </p>
-                  <p>
-                  Technologies: React, Javascript, Node.js, MySQL, AWS RDS
-                  </p>
-              </div>
-          </div>
-
-
-          <div className="p-10 bg-gray-800 flex flex-col justify-around items-start
-                          gap-5 lg:flex-row max-w-5xl mx-auto shadow transition 
-                          hover:shadow-xl hover:scale-[102%] w-full md:items-center">
-              <div className="w-80 rounded">
-                  <a target="_blank" 
-                      // href={repoLinkYelp || "#"}
-                      href="https://github.com/slalani13/Yelp-Ratings-Prediction-Project"
-                      className="w-full h-full">
-                      <img src={picture1}
-                           alt="Project 1"
-                           className="w-full h-64 
-                                      bg-cover rounded"/>
-                  </a>
-              </div>
-              <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1 text-gray-100">
-                  <h2 className="font-bold text-3xl text-center">
-                      <a target="_blank" className="hover:underline text-teal-400"
-                        //   href={repoLinkYelp || "#"}
-                          href="https://github.com/slalani13/Yelp-Ratings-Prediction-Project">
-                          Yelp Star Ratings Prediction
-                      </a>
-                  </h2>
-                  <p>
-                  This project aims to improve Customer Experience and Business Performance on Yelp through data-driven insights. By analyzing customer reviews, profiles, and business data, I identified key factors influencing customer impressions, predicted ratings, and offered strategies for businesses to address trends in customer behavior.
-                  </p>
-                  <p>
-                  Technologies: Python (Pandas, scikit-learnm matplotlib), Tableau, Seaborn
-                  </p>
-              </div>
-          </div>
-
-      </section>
+        ))}
+      </div>
+    </section>
   );
 }
