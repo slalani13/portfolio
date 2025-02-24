@@ -46,36 +46,38 @@ export default function About() {
       
       {/* Headshot Container (30% width) */}
       <div className="w-full lg:w-1/3 flex justify-center items-center relative mb-8 lg:mb-0">
-        
-        {/* Pulsing Red Dotted Border */}
-        <motion.div
-          className="absolute w-72 h-72 border-[6px] border-dotted border-red-500 rounded-full"
-          animate={{ scale: [1, 1.1, 1] }} // Smooth pulsing effect
-          transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }} // Slow and natural
-        ></motion.div>
 
-        {/* Headshot Image */}
-        <motion.img
-          src={profilePhoto || headshot} // Default to the local headshot if GitHub profile photo is not available
-          alt="About"
-          className="w-64 h-64 object-cover rounded-full border-[10px] border-gray-800 shadow-lg"
-          whileHover={{ scale: 1.05 }} // Subtle hover effect
-          transition={{ type: "spring", stiffness: 120 }}
-        />
+      {/* Rotating Red Dotted Border (only on hover) */}
+      <motion.div
+        className="absolute w-72 h-72 border-[6px] border-dotted border-red-500 rounded-full"
+        animate={{ rotate: 0 }} // Default: No rotation
+        whileHover={{ rotate: 360 }} // Rotate only on hover
+        transition={{ duration: 12, ease: "linear" }} // Slow and smooth rotation
+      ></motion.div>
+
+      {/* Headshot Image */}
+      <motion.img
+        src={profilePhoto || headshot} // Default to the local headshot if GitHub profile photo is not available
+        alt="About"
+        className="w-64 h-64 object-cover rounded-full border-[10px] border-gray-800 shadow-lg"
+        whileHover={{ scale: 1.05 }} // Subtle hover effect
+        transition={{ type: "spring", stiffness: 120 }}
+      />
       </div>
+
 
       {/* Text Section (70% width) */}
       <div className="w-full lg:w-2/3 flex flex-col justify-center items-start gap-1 px-6 ">
         <h2 className="text-center text-5xl text-red-500 font-bold mb-8">
           About Me
         </h2>
-        
+{/*         
         <p className="text-gray-300 text-center lg:text-left">
           {bio}
-        </p>
+        </p> */}
         
         <p className="text-gray-300 text-center lg:text-left">
-          I build scalable backend systems, full-stack apps, and data pipelines. Passionate about crafting solutions that make a real impact.
+          I build full-stack apps, scalable backend systems, and data pipelines. Passionate about crafting solutions that make a real impact.
         </p>
         
         <p className="text-gray-300 text-start lg:text-left">

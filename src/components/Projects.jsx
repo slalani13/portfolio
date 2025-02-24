@@ -2,6 +2,9 @@ import {useState, useEffect} from "react"
 import ideal from "../assets/ideal neighborhood.jpg"
 import picture1 from "../assets/Picture1.jpg"
 import hrhouz from "../assets/hrhouz.png"
+import trackmatcher from "../assets/trackmatcher.png"
+import github from "../assets/github.jpeg"
+import twitter from "../assets/twitter.png"
 
 export default function Projects() {
   return (
@@ -13,6 +16,30 @@ export default function Projects() {
       {/* Grid Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
+          {
+            title: "Track Matcher - Music Puzzles",
+            imgSrc: trackmatcher,
+            link: "https://track-matcher.netlify.app/",
+            description:
+              "An app which uses Spotify's web API to create puzzle games such as Anagrams and Hangman with songs from your favorite artists.",
+            tech: "Typescript, Angular, TailwindCSS, Node.js, Figma, Git",
+          },
+          {
+            title: "Twitter Clone",
+            imgSrc: twitter,
+            link: "https://github.com/slalani13/Yelp-Ratings-Prediction-Project",
+            description:
+              "A social media clone which implements 30 RESTful endpoints for core interactions like like tweet/user creation, mentions, hashtags, and user profile/credentials",
+            tech: "Java, PostgreSQL, SpringBoot, JPA, Hibernate, Lombok, MapStruct, Git",
+          },
+          {
+            title: "Dev Duel",
+            imgSrc: github,
+            link: "https://github.com/slalani13/dev_duel",
+            description:
+              "An app that inspects and compares developer profiles using Github's web API.",
+            tech: "Angular, Typescript, Node.js, CSS, Git",
+          },
           {
             title: "AI-driven Reference Check Analytics",
             imgSrc: hrhouz,
