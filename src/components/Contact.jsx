@@ -1,3 +1,5 @@
+import resume from "../assets/resume.pdf";
+
 export default function Contact() {
     return (
         <section id="contact" className=" max-w-5xl mx-auto p-3 bg-black text-gray-100">
@@ -25,7 +27,7 @@ export default function Contact() {
                 </a>
                 <a
                     className="text-center hover:underline text-gray-300 hover:text-red-500"
-                    href="https://docs.google.com/document/d/1ZYn0cqV3BXf3Spuj55sDAcgPJ3KdfLYThks8Xl4rrNo/edit?usp=sharing"
+                    href={resume}
                     target="_blank"
                     >
                     <i className="fa-solid fa-file-arrow-down text-3xl"></i> {/* File download icon */}
